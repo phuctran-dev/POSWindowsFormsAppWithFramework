@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace POSWindowsFormsAppWithFramework.Controllers
+namespace POSWindowsFormsAppWithFramework.UserControls
 {
-    public partial class HomePageController : UserControl
+    public partial class OrderUC : UserControl
     {
-        public HomePageController()
+        public OrderUC()
         {
             InitializeComponent();
         }
