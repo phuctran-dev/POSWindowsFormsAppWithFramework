@@ -37,7 +37,7 @@
             this.lbl_Username = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnRegister = new System.Windows.Forms.Button();
-            this.txtResult = new System.Windows.Forms.Label();
+            this.lblResult = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbl_invalidPassword
@@ -120,18 +120,18 @@
             // btnLogin
             // 
             this.btnLogin.Location = new System.Drawing.Point(500, 455);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(100, 28);
             this.btnLogin.TabIndex = 14;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_ClickAsync);
             // 
             // btnRegister
             // 
             this.btnRegister.Location = new System.Drawing.Point(376, 455);
-            this.btnRegister.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRegister.Margin = new System.Windows.Forms.Padding(4);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(100, 28);
             this.btnRegister.TabIndex = 15;
@@ -139,24 +139,24 @@
             this.btnRegister.UseVisualStyleBackColor = true;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
-            // txtResult
+            // lblResult
             // 
-            this.txtResult.AutoSize = true;
-            this.txtResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtResult.ForeColor = System.Drawing.Color.Red;
-            this.txtResult.Location = new System.Drawing.Point(385, 506);
-            this.txtResult.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
-            this.txtResult.Name = "txtResult";
-            this.txtResult.Size = new System.Drawing.Size(84, 20);
-            this.txtResult.TabIndex = 16;
-            this.txtResult.Text = "txtResult";
-            this.txtResult.Visible = false;
+            this.lblResult.AutoSize = true;
+            this.lblResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResult.ForeColor = System.Drawing.Color.Red;
+            this.lblResult.Location = new System.Drawing.Point(385, 506);
+            this.lblResult.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
+            this.lblResult.Name = "lblResult";
+            this.lblResult.Size = new System.Drawing.Size(63, 20);
+            this.lblResult.TabIndex = 16;
+            this.lblResult.Text = "Result";
+            this.lblResult.Visible = false;
             // 
             // LoginUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.txtResult);
+            this.Controls.Add(this.lblResult);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.lbl_invalidPassword);
@@ -166,7 +166,7 @@
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbl_Username);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "LoginUC";
             this.Size = new System.Drawing.Size(875, 599);
             this.ResumeLayout(false);
@@ -185,6 +185,6 @@
         private System.Windows.Forms.Label lbl_Username;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnRegister;
-        private System.Windows.Forms.Label txtResult;
+        private System.Windows.Forms.Label lblResult;
     }
 }
