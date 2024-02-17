@@ -62,7 +62,7 @@
             this.panelMainContainer.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.panelMainContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMainContainer.Location = new System.Drawing.Point(140, 57);
-            this.panelMainContainer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelMainContainer.Margin = new System.Windows.Forms.Padding(4);
             this.panelMainContainer.Name = "panelMainContainer";
             this.panelMainContainer.Size = new System.Drawing.Size(911, 667);
             this.panelMainContainer.TabIndex = 2;
@@ -77,7 +77,7 @@
             this.panel2.Controls.Add(this.btnLogin);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 57);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(140, 667);
             this.panel2.TabIndex = 1;
@@ -96,7 +96,7 @@
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
             this.guna2Button2.Location = new System.Drawing.Point(4, 526);
-            this.guna2Button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button2.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.Size = new System.Drawing.Size(133, 123);
             this.guna2Button2.TabIndex = 4;
@@ -116,7 +116,7 @@
             this.btnReport.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnReport.ForeColor = System.Drawing.Color.White;
             this.btnReport.Location = new System.Drawing.Point(4, 395);
-            this.btnReport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnReport.Margin = new System.Windows.Forms.Padding(4);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(133, 123);
             this.btnReport.TabIndex = 3;
@@ -136,7 +136,7 @@
             this.btnBooking.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnBooking.ForeColor = System.Drawing.Color.White;
             this.btnBooking.Location = new System.Drawing.Point(3, 265);
-            this.btnBooking.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBooking.Margin = new System.Windows.Forms.Padding(4);
             this.btnBooking.Name = "btnBooking";
             this.btnBooking.Size = new System.Drawing.Size(133, 123);
             this.btnBooking.TabIndex = 2;
@@ -158,7 +158,7 @@
             this.btnOrder.ForeColor = System.Drawing.Color.White;
             this.btnOrder.HoverState.CustomBorderColor = System.Drawing.Color.White;
             this.btnOrder.Location = new System.Drawing.Point(4, 134);
-            this.btnOrder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOrder.Margin = new System.Windows.Forms.Padding(4);
             this.btnOrder.Name = "btnOrder";
             this.btnOrder.Size = new System.Drawing.Size(133, 123);
             this.btnOrder.TabIndex = 1;
@@ -181,7 +181,7 @@
             this.btnLogin.ForeColor = System.Drawing.Color.White;
             this.btnLogin.HoverState.CustomBorderColor = System.Drawing.Color.White;
             this.btnLogin.Location = new System.Drawing.Point(3, 4);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(133, 123);
             this.btnLogin.TabIndex = 0;
@@ -194,7 +194,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1051, 57);
             this.panel1.TabIndex = 0;

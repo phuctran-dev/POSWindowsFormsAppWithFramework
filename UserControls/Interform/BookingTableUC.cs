@@ -25,7 +25,7 @@ namespace POSWindowsFormsAppWithFramework.UserControls
         {
             BookingTableDetail bookingTableDetail = new BookingTableDetail();
             {
-                bookingTableDetail.Id = Guid.NewGuid();
+                bookingTableDetail.Id = Guid.NewGuid().ToString();
                 bookingTableDetail.Name = txtName.Text;
                 bookingTableDetail.People = int.Parse(txtPeople.Text);
                 bookingTableDetail.PhoneNumber = txtPhoneNumber.Text;
