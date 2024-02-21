@@ -185,6 +185,7 @@
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\BookingTableDetail.cs" />
     <Compile Include="Models\Dto\AuthenticationRequest.cs" />
+    <Compile Include="Models\Dto\BookingTableRequest.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserControls\Interform\BookingTableUC.cs">

@@ -21,13 +21,10 @@ namespace POSWindowsFormsAppWithFramework.UserControls
     public partial class LoginUC : UserControl
     {
         private readonly System.Windows.Forms.Timer t = new System.Windows.Forms.Timer();
-        private readonly IConfigurationSystem _configurationSystem;
-        Dictionary<string, string> accounts = new Dictionary<string, string>();
 
         public LoginUC()
         {
             InitializeComponent();
-            accounts.Add("admin", "admin");
         }
 
         private void txtUsername_TextChanged(object sender, EventArgs e)
@@ -58,7 +55,8 @@ namespace POSWindowsFormsAppWithFramework.UserControls
                 lbl_invalidPassword.Visible = false;
             }
         }
-        [HttpPost]
+
+        
         private async void btnLogin_ClickAsync(object sender, EventArgs e)
         {
             using (var httpClient = new HttpClient())
@@ -72,7 +70,7 @@ namespace POSWindowsFormsAppWithFramework.UserControls
                     requestTime = DateTime.Now.ToString("G"),
                 });
 
-                var response = await httpClient.PostAsync($"/Account/login", 
+                var response = await httpClient.PostAsync("/Account/login", 
                                 new StringContent(authenticationRequestDto, Encoding.UTF8, "application/json"));
 
                 lblResult.Visible = true;   

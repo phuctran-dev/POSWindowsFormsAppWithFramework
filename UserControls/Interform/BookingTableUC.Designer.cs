@@ -44,6 +44,7 @@
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
             this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
             this.cbbType = new System.Windows.Forms.ComboBox();
+            this.lblResult = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtDate
@@ -60,7 +61,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(134, 125);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 25);
+            this.label1.Size = new System.Drawing.Size(60, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Name:";
             // 
@@ -71,7 +72,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(134, 173);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(105, 25);
+            this.label2.Size = new System.Drawing.Size(85, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Numbers:";
             // 
@@ -82,7 +83,7 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(134, 224);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(162, 25);
+            this.label3.Size = new System.Drawing.Size(132, 20);
             this.label3.TabIndex = 3;
             this.label3.Text = "Phone Number:";
             // 
@@ -93,7 +94,7 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(134, 271);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 25);
+            this.label4.Size = new System.Drawing.Size(53, 20);
             this.label4.TabIndex = 4;
             this.label4.Text = "Date:";
             // 
@@ -104,7 +105,7 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(134, 319);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(67, 25);
+            this.label5.Size = new System.Drawing.Size(52, 20);
             this.label5.TabIndex = 5;
             this.label5.Text = "Time:";
             // 
@@ -122,7 +123,7 @@
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(134, 408);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(64, 25);
+            this.label6.Size = new System.Drawing.Size(52, 20);
             this.label6.TabIndex = 7;
             this.label6.Text = "Note:";
             // 
@@ -133,7 +134,7 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(134, 363);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(68, 25);
+            this.label7.Size = new System.Drawing.Size(52, 20);
             this.label7.TabIndex = 8;
             this.label7.Text = "Type:";
             // 
@@ -180,7 +181,7 @@
             this.btnSave.Size = new System.Drawing.Size(154, 49);
             this.btnSave.TabIndex = 15;
             this.btnSave.Text = "SAVE";
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.btnSave.Click += new System.EventHandler(this.btnSave_ClickAsync);
             // 
             // btnCancel
             // 
@@ -207,11 +208,25 @@
             this.cbbType.Size = new System.Drawing.Size(200, 24);
             this.cbbType.TabIndex = 19;
             // 
+            // lblResult
+            // 
+            this.lblResult.AutoSize = true;
+            this.lblResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResult.ForeColor = System.Drawing.Color.Red;
+            this.lblResult.Location = new System.Drawing.Point(316, 461);
+            this.lblResult.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
+            this.lblResult.Name = "lblResult";
+            this.lblResult.Size = new System.Drawing.Size(51, 16);
+            this.lblResult.TabIndex = 20;
+            this.lblResult.Text = "Result";
+            this.lblResult.Visible = false;
+            // 
             // BookingTableUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
+            this.Controls.Add(this.lblResult);
             this.Controls.Add(this.cbbType);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
@@ -254,5 +269,6 @@
         private Guna.UI2.WinForms.Guna2Button btnSave;
         private Guna.UI2.WinForms.Guna2Button btnCancel;
         private System.Windows.Forms.ComboBox cbbType;
+        private System.Windows.Forms.Label lblResult;
     }
 }
