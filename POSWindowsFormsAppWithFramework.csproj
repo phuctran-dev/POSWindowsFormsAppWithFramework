@@ -183,6 +183,7 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Account.cs" />
+    <Compile Include="Models\AnniversaryType.cs" />
     <Compile Include="Models\BookingTableDetail.cs" />
     <Compile Include="Models\Dto\AuthenticationRequest.cs" />
     <Compile Include="Models\Dto\BookingTableRequest.cs" />

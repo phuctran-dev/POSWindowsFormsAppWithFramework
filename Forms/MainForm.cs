@@ -41,5 +41,23 @@ namespace POSWindowsFormsAppWithFramework
             BookingTableUC bookingTableUC = new BookingTableUC();
             addUserControl(bookingTableUC);
         }
+
+        private void RefreshMyForm()
+        {
+            // Do your data update logic here   
+            lblTimeNow.Text = DateTime.Now.ToString("t");
+            this.Refresh();
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            RefreshMyForm();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            RefreshMyForm();
+            timer2.Start();
+        }
     }
 }

@@ -1,25 +1,22 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
-using POSWindowsFormsAppWithFramework.Models;
 using POSWindowsFormsAppWithFramework.Models.Dto;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Configuration;
 using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Net.Http;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+
 
 namespace POSWindowsFormsAppWithFramework.UserControls
 {
     public partial class BookingTableUC : UserControl
     {
         private readonly System.Windows.Forms.Timer t = new System.Windows.Forms.Timer();
-
+        private IDbConnection _connection;
         public BookingTableUC()
         {
             InitializeComponent();
@@ -58,10 +55,21 @@ namespace POSWindowsFormsAppWithFramework.UserControls
             }
         }
 
-        private void BookingTableUC_Load(object sender, EventArgs e)
+        private async void BookingTableUC_Load(object sender, EventArgs e)
         {
-            List<string> anniversaryTypes = new List<string>();
-            cbbType.DataSource = anniversaryTypes;
+            using (var httpClient = new HttpClient())
+            {
+                httpClient.BaseAddress = new Uri(ConfigurationManager.AppSettings["POSApis"]);
+
+                var response = await httpClient.GetAsync("/Booking/get-anniversary-type");
+
+                var resultList = JsonConvert.DeserializeObject<List<string>>(await response.Content.ReadAsStringAsync());
+                if (response.IsSuccessStatusCode)
+                    ClearControls();
+
+                cbbType.DataSource = resultList;
+            }
+            
         }
 
         public void ClearControls()
