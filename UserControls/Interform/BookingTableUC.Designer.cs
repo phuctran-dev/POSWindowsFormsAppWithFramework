@@ -40,11 +40,11 @@
             this.txtPeople = new System.Windows.Forms.TextBox();
             this.txtPhoneNumber = new System.Windows.Forms.TextBox();
             this.txtNote = new System.Windows.Forms.TextBox();
-            this.txtTime = new System.Windows.Forms.DateTimePicker();
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
             this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
             this.cbbType = new System.Windows.Forms.ComboBox();
             this.lblResult = new System.Windows.Forms.Label();
+            this.cbbTime = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // txtDate
@@ -61,7 +61,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(134, 125);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 20);
+            this.label1.Size = new System.Drawing.Size(75, 25);
             this.label1.TabIndex = 1;
             this.label1.Text = "Name:";
             // 
@@ -72,7 +72,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(134, 173);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 20);
+            this.label2.Size = new System.Drawing.Size(105, 25);
             this.label2.TabIndex = 2;
             this.label2.Text = "Numbers:";
             // 
@@ -83,7 +83,7 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(134, 224);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(132, 20);
+            this.label3.Size = new System.Drawing.Size(162, 25);
             this.label3.TabIndex = 3;
             this.label3.Text = "Phone Number:";
             // 
@@ -94,7 +94,7 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(134, 271);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 20);
+            this.label4.Size = new System.Drawing.Size(64, 25);
             this.label4.TabIndex = 4;
             this.label4.Text = "Date:";
             // 
@@ -105,7 +105,7 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(134, 319);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(52, 20);
+            this.label5.Size = new System.Drawing.Size(67, 25);
             this.label5.TabIndex = 5;
             this.label5.Text = "Time:";
             // 
@@ -123,7 +123,7 @@
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(134, 408);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 20);
+            this.label6.Size = new System.Drawing.Size(64, 25);
             this.label6.TabIndex = 7;
             this.label6.Text = "Note:";
             // 
@@ -134,7 +134,7 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(134, 363);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(52, 20);
+            this.label7.Size = new System.Drawing.Size(68, 25);
             this.label7.TabIndex = 8;
             this.label7.Text = "Type:";
             // 
@@ -158,13 +158,6 @@
             this.txtNote.Name = "txtNote";
             this.txtNote.Size = new System.Drawing.Size(200, 22);
             this.txtNote.TabIndex = 13;
-            // 
-            // txtTime
-            // 
-            this.txtTime.Location = new System.Drawing.Point(319, 319);
-            this.txtTime.Name = "txtTime";
-            this.txtTime.Size = new System.Drawing.Size(200, 22);
-            this.txtTime.TabIndex = 14;
             // 
             // btnSave
             // 
@@ -216,21 +209,29 @@
             this.lblResult.Location = new System.Drawing.Point(316, 461);
             this.lblResult.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.lblResult.Name = "lblResult";
-            this.lblResult.Size = new System.Drawing.Size(51, 16);
+            this.lblResult.Size = new System.Drawing.Size(63, 20);
             this.lblResult.TabIndex = 20;
             this.lblResult.Text = "Result";
             this.lblResult.Visible = false;
+            // 
+            // cbbTime
+            // 
+            this.cbbTime.FormattingEnabled = true;
+            this.cbbTime.Location = new System.Drawing.Point(319, 319);
+            this.cbbTime.Name = "cbbTime";
+            this.cbbTime.Size = new System.Drawing.Size(200, 24);
+            this.cbbTime.TabIndex = 21;
             // 
             // BookingTableUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
+            this.Controls.Add(this.cbbTime);
             this.Controls.Add(this.lblResult);
             this.Controls.Add(this.cbbType);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.txtTime);
             this.Controls.Add(this.txtNote);
             this.Controls.Add(this.txtPhoneNumber);
             this.Controls.Add(this.txtPeople);
@@ -265,10 +266,10 @@
         private System.Windows.Forms.TextBox txtPeople;
         private System.Windows.Forms.TextBox txtPhoneNumber;
         private System.Windows.Forms.TextBox txtNote;
-        private System.Windows.Forms.DateTimePicker txtTime;
         private Guna.UI2.WinForms.Guna2Button btnSave;
         private Guna.UI2.WinForms.Guna2Button btnCancel;
         private System.Windows.Forms.ComboBox cbbType;
         private System.Windows.Forms.Label lblResult;
+        private System.Windows.Forms.ComboBox cbbTime;
     }
 }
