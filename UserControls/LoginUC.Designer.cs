@@ -90,7 +90,7 @@
             // 
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.Location = new System.Drawing.Point(247, 330);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(168, 26);
@@ -101,7 +101,7 @@
             // 
             this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsername.Location = new System.Drawing.Point(247, 275);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(2);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(168, 26);
             this.txtUsername.TabIndex = 9;
@@ -172,10 +172,12 @@
             // 
             // picLogin
             // 
+            this.picLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.picLogin.Image = ((System.Drawing.Image)(resources.GetObject("picLogin.Image")));
             this.picLogin.Location = new System.Drawing.Point(197, 24);
             this.picLogin.Name = "picLogin";
-            this.picLogin.Size = new System.Drawing.Size(277, 163);
+            this.picLogin.Size = new System.Drawing.Size(275, 183);
+            this.picLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.picLogin.TabIndex = 17;
             this.picLogin.TabStop = false;
             // 

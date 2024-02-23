@@ -56,13 +56,12 @@
             this.panelMain.Location = new System.Drawing.Point(6, 6);
             this.panelMain.Margin = new System.Windows.Forms.Padding(2);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(788, 588);
+            this.panelMain.Size = new System.Drawing.Size(972, 572);
             this.panelMain.TabIndex = 0;
             // 
             // panelMainContainer
             // 
             this.panelMainContainer.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.panelMainContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMainContainer.Location = new System.Drawing.Point(105, 46);
             this.panelMainContainer.Name = "panelMainContainer";
             this.panelMainContainer.Size = new System.Drawing.Size(683, 542);
@@ -79,7 +78,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 46);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(105, 542);
+            this.panel2.Size = new System.Drawing.Size(105, 526);
             this.panel2.TabIndex = 1;
             // 
             // guna2Button2
@@ -190,7 +189,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(788, 46);
+            this.panel1.Size = new System.Drawing.Size(972, 46);
             this.panel1.TabIndex = 0;
             // 
             // lblTimeNow
@@ -198,7 +197,7 @@
             this.lblTimeNow.AutoSize = true;
             this.lblTimeNow.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTimeNow.ForeColor = System.Drawing.SystemColors.Window;
-            this.lblTimeNow.Location = new System.Drawing.Point(373, 12);
+            this.lblTimeNow.Location = new System.Drawing.Point(470, 16);
             this.lblTimeNow.Name = "lblTimeNow";
             this.lblTimeNow.Size = new System.Drawing.Size(38, 16);
             this.lblTimeNow.TabIndex = 0;
@@ -214,13 +213,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(800, 600);
-            this.ControlBox = false;
+            this.ClientSize = new System.Drawing.Size(984, 584);
             this.Controls.Add(this.panelMain);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainForm";
             this.Padding = new System.Windows.Forms.Padding(6);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.panelMain.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
