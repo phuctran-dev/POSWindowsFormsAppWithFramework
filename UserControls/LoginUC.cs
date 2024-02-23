@@ -59,6 +59,8 @@ namespace POSWindowsFormsAppWithFramework.UserControls
         
         private async void btnLogin_ClickAsync(object sender, EventArgs e)
         {
+            barCircleProgressBar.Visible = true ;
+            
             using (var httpClient = new HttpClient())
             {
                 httpClient.BaseAddress = new Uri(ConfigurationManager.AppSettings["POSApis"]);
@@ -72,7 +74,7 @@ namespace POSWindowsFormsAppWithFramework.UserControls
 
                 var response = await httpClient.PostAsync("/Account/login", 
                                 new StringContent(authenticationRequestDto, Encoding.UTF8, "application/json"));
-
+                barCircleProgressBar.Visible = false;
                 lblResult.Visible = true;   
                 lblResult.BringToFront();
                 lblResult.Text = response.Content.ReadAsStringAsync().Result.ToString();
@@ -84,6 +86,7 @@ namespace POSWindowsFormsAppWithFramework.UserControls
 
         private async void btnRegister_Click(object sender, EventArgs e)
         {
+            barCircleProgressBar.Visible= true ;
             using (var httpClient = new HttpClient())
             {
 
@@ -98,7 +101,7 @@ namespace POSWindowsFormsAppWithFramework.UserControls
 
                 var response = await httpClient.PostAsync($"/Account/register",
                                 new StringContent(loginAccountDto, Encoding.UTF8, "application/json"));
-
+                barCircleProgressBar.Visible = false;
                 lblResult.Visible = true;
                 lblResult.BringToFront();
                 lblResult.Text = response.Content.ReadAsStringAsync().Result.ToString();
