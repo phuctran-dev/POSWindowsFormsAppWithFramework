@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace POSWindowsFormsAppWithFramework
 {
@@ -15,12 +16,12 @@ namespace POSWindowsFormsAppWithFramework
             LoginUC loginUC = new LoginUC();
             addUserControl(loginUC);
         }
-
+         
         private void addUserControl (UserControl userControl)
         {
             userControl.Dock = DockStyle.Fill;
             panelMainContainer.Controls.Clear ();
-            panelMainContainer.Controls.Add (userControl);
+            panelMainContainer.Controls.Add(userControl);
             userControl.BringToFront();
         }
 
@@ -28,6 +29,7 @@ namespace POSWindowsFormsAppWithFramework
         {
             LoginUC loginUC = new LoginUC();
             addUserControl(loginUC);
+            
         }
 
         private void btnOrder_Click(object sender, EventArgs e)
@@ -35,10 +37,22 @@ namespace POSWindowsFormsAppWithFramework
             OrderUC orderUC = new OrderUC();
             addUserControl(orderUC);
         }
+        private void btnBookings_Click(object sender, EventArgs e)
+        {
+            UserControl c = new BookingsUC();
+            c.Dock = DockStyle.Top;
+
+            Width = c.Width + Width - ClientSize.Width;
+            Height = c.Height + Height - ClientSize.Height;
+
+            Controls.Add(c);
+            //BookingsUC bookingsUC = new BookingsUC();
+            //addUserControl(bookingsUC);
+        }
 
         private void btnBooking_Click(object sender, EventArgs e)
         {
-            BookingTableUC bookingTableUC = new BookingTableUC();
+            CreateBookingTableUC bookingTableUC = new CreateBookingTableUC();
             addUserControl(bookingTableUC);
         }
 
@@ -58,6 +72,15 @@ namespace POSWindowsFormsAppWithFramework
         {
             RefreshMyForm();
             timer2.Start();
+        }
+
+        private void MainForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                // Close the form
+                this.Close();
+            }
         }
     }
 }

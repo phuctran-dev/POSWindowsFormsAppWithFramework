@@ -140,6 +140,7 @@
     <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Diagnostics.DiagnosticSource.4.5.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
     </Reference>
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Management" />
     <Reference Include="System.Memory, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Memory.4.5.1\lib\netstandard2.0\System.Memory.dll</HintPath>
@@ -189,11 +190,17 @@
     <Compile Include="Models\Dto\BookingTableRequest.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserControls\Interform\BookingTableUC.cs">
+    <Compile Include="UserControls\BookingsUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\Interform\BookingTableUC.Designer.cs">
-      <DependentUpon>BookingTableUC.cs</DependentUpon>
+    <Compile Include="UserControls\BookingsUC.Designer.cs">
+      <DependentUpon>BookingsUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Interform\CreateBookingTableUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Interform\CreateBookingTableUC.Designer.cs">
+      <DependentUpon>CreateBookingTableUC.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\LoginUC.cs">
       <SubType>UserControl</SubType>
@@ -219,8 +226,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UserControls\Interform\BookingTableUC.resx">
-      <DependentUpon>BookingTableUC.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\BookingsUC.resx">
+      <DependentUpon>BookingsUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Interform\CreateBookingTableUC.resx">
+      <DependentUpon>CreateBookingTableUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\LoginUC.resx">
       <DependentUpon>LoginUC.cs</DependentUpon>

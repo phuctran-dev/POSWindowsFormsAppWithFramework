@@ -13,11 +13,12 @@ using System.Data.SqlClient;
 
 namespace POSWindowsFormsAppWithFramework.UserControls
 {
-    public partial class BookingTableUC : UserControl
+    public partial class CreateBookingTableUC : UserControl
     {
         private readonly System.Windows.Forms.Timer t = new System.Windows.Forms.Timer();
         private IDbConnection _connection;
-        public BookingTableUC()
+        private MainForm mainForm = new MainForm();
+        public CreateBookingTableUC()
         {
             InitializeComponent();
         }
@@ -57,6 +58,19 @@ namespace POSWindowsFormsAppWithFramework.UserControls
 
         private async void BookingTableUC_Load(object sender, EventArgs e)
         {
+            List<string> timeRange = new List<string>();
+            string[] hours = { "00", "01", "02", "03", "04", "05", "06", "07", "08",
+                   "09", "10", "11", "12", "13", "14", "15", "16", "17",
+                   "18", "19", "20", "21", "22", "23", "24" };
+            string[] minutes = { "00", "15", "30", "45" };
+            for (int i = 0; i < 24; i++)
+            {
+                for (int j = 0; j < 4; j++)
+                {
+                    timeRange.Add($"{hours[i]}:{minutes[j]}");
+                }
+            }
+            cbbTime.DataSource = timeRange;
             using (var httpClient = new HttpClient())
             {
                 httpClient.BaseAddress = new Uri(ConfigurationManager.AppSettings["POSApis"]);
@@ -86,6 +100,7 @@ namespace POSWindowsFormsAppWithFramework.UserControls
         private void btnCancel_Click(object sender, EventArgs e)
         {
             ClearControls();
+            
         }
 
         private void T_Tick(object sender, EventArgs e)
@@ -93,6 +108,14 @@ namespace POSWindowsFormsAppWithFramework.UserControls
             System.Windows.Forms.Timer _t = sender as System.Windows.Forms.Timer;
             lblResult.Text = "";
             _t.Stop();
+        }
+
+        private void btnCancel_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                LoginUC loginUC = new LoginUC();
+            }
         }
     }
 }
