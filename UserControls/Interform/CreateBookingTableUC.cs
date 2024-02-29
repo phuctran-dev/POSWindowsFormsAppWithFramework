@@ -13,11 +13,12 @@ using System.Data.SqlClient;
 
 namespace POSWindowsFormsAppWithFramework.UserControls
 {
-    public partial class BookingTableUC : UserControl
+    public partial class CreateBookingTableUC : UserControl
     {
         private readonly System.Windows.Forms.Timer t = new System.Windows.Forms.Timer();
         private IDbConnection _connection;
-        public BookingTableUC()
+        private MainForm mainForm = new MainForm();
+        public CreateBookingTableUC()
         {
             InitializeComponent();
         }
@@ -99,6 +100,7 @@ namespace POSWindowsFormsAppWithFramework.UserControls
         private void btnCancel_Click(object sender, EventArgs e)
         {
             ClearControls();
+            
         }
 
         private void T_Tick(object sender, EventArgs e)
@@ -106,6 +108,14 @@ namespace POSWindowsFormsAppWithFramework.UserControls
             System.Windows.Forms.Timer _t = sender as System.Windows.Forms.Timer;
             lblResult.Text = "";
             _t.Stop();
+        }
+
+        private void btnCancel_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                LoginUC loginUC = new LoginUC();
+            }
         }
     }
 }

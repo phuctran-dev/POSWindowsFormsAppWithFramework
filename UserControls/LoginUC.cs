@@ -92,7 +92,7 @@ namespace POSWindowsFormsAppWithFramework.UserControls
 
                 httpClient.BaseAddress = new Uri(ConfigurationManager.AppSettings["POSApis"]);
 
-                var loginAccountDto = JsonConvert.SerializeObject(new AuthenticationRequest
+                var loginRequestDto = JsonConvert.SerializeObject(new AuthenticationRequest
                 {
                     Username = txtUsername.Text,
                     Password = txtPassword.Text,
@@ -100,7 +100,7 @@ namespace POSWindowsFormsAppWithFramework.UserControls
                 });
 
                 var response = await httpClient.PostAsync($"/Account/register",
-                                new StringContent(loginAccountDto, Encoding.UTF8, "application/json"));
+                                new StringContent(loginRequestDto, Encoding.UTF8, "application/json"));
                 barCircleProgressBar.Visible = false;
                 lblResult.Visible = true;
                 lblResult.BringToFront();
@@ -111,11 +111,48 @@ namespace POSWindowsFormsAppWithFramework.UserControls
             }
         }
 
+        
+
+
+        private async void btnForgot_Click(object sender, EventArgs e)
+        {
+            barCircleProgressBar.Visible = true;
+            using (var httpClient = new HttpClient())
+            {
+
+                httpClient.BaseAddress = new Uri(ConfigurationManager.AppSettings["POSApis"]);
+
+                var forgotRequestDto = JsonConvert.SerializeObject(new AuthenticationRequest
+                {
+                    Username = txtUsername.Text,
+                    requestTime = DateTime.Now.ToString("G"),
+                });
+
+                var response = await httpClient.PostAsync($"/Account/forgot",
+                                new StringContent(forgotRequestDto, Encoding.UTF8, "application/json"));
+                barCircleProgressBar.Visible = false;
+                lblResult.Visible = true;
+                lblResult.BringToFront();
+                lblResult.Text = response.Content.ReadAsStringAsync().Result.ToString();
+                t.Interval = 5000;
+                t.Tick += T_Tick;
+                t.Start();
+            }
+        }
         private void T_Tick(object sender, EventArgs e)
         {
             System.Windows.Forms.Timer _t = sender as System.Windows.Forms.Timer;
-            lblResult.Text = "";
             _t.Stop();
+            lblResult.Text = "";
+        }
+
+        private void btnLogin_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch(e.KeyCode)
+            {
+                case Keys.Tab:
+                    break;
+            }
         }
     }
 }
