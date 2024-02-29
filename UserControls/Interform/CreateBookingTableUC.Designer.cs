@@ -47,7 +47,6 @@
             this.lblResult = new System.Windows.Forms.Label();
             this.cbbTime = new System.Windows.Forms.ComboBox();
             this.btnBack = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtDate
@@ -249,28 +248,18 @@
             this.btnBack.ImageOffset = new System.Drawing.Point(0, 0);
             this.btnBack.ImageRotate = 0F;
             this.btnBack.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnBack.Location = new System.Drawing.Point(64, 20);
+            this.btnBack.Location = new System.Drawing.Point(0, 3);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(64, 54);
             this.btnBack.TabIndex = 22;
-            // 
-            // button1
-            // 
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(279, 51);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(20, 20);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // CreateBookingTableUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
-            this.Controls.Add(this.button1);
+            this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.cbbTime);
             this.Controls.Add(this.lblResult);
@@ -291,7 +280,7 @@
             this.Controls.Add(this.txtDate);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CreateBookingTableUC";
-            this.Size = new System.Drawing.Size(522, 492);
+            this.Size = new System.Drawing.Size(518, 488);
             this.Load += new System.EventHandler(this.BookingTableUC_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -318,6 +307,5 @@
         private System.Windows.Forms.Label lblResult;
         private System.Windows.Forms.ComboBox cbbTime;
         private Guna.UI2.WinForms.Guna2ImageButton btnBack;
-        private System.Windows.Forms.Button button1;
     }
 }

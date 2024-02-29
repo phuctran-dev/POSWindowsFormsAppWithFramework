@@ -30,7 +30,7 @@ namespace POSWindowsFormsAppWithFramework.UserControls
                 var response = await httpClient.GetAsync("/Booking/get-all-bookings");
                 var data = response.Content.ReadAsStringAsync().Result.ToString();
                 barCircleProgressBar.Visible = false;
-                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(response.Content.ReadAsStringAsync().Result.ToString(), );
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(response.Content.ReadAsStringAsync().Result.ToString(), data);
                 tblBookings.DataSource = sqlDataAdapter;
             }
         }
@@ -38,7 +38,8 @@ namespace POSWindowsFormsAppWithFramework.UserControls
         private void gunabtnAddBookingTable_Click(object sender, EventArgs e)
         {
             CreateBookingTableUC createBookingTableUC = new CreateBookingTableUC();
-            addUserControl(loginUC);
+            Controls.Add(createBookingTableUC);
+            createBookingTableUC.BringToFront();
         }
     }
 }

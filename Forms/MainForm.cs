@@ -37,7 +37,7 @@ namespace POSWindowsFormsAppWithFramework
             OrderUC orderUC = new OrderUC();
             addUserControl(orderUC);
         }
-        private void btnBookings_Click(object sender, EventArgs e)
+        private void btnBooking_Click(object sender, EventArgs e)
         {
             UserControl c = new BookingsUC();
             c.Dock = DockStyle.Top;
@@ -50,10 +50,10 @@ namespace POSWindowsFormsAppWithFramework
             //addUserControl(bookingsUC);
         }
 
-        private void btnBooking_Click(object sender, EventArgs e)
+        private void btnBookings_Click(object sender, EventArgs e)
         {
-            CreateBookingTableUC bookingTableUC = new CreateBookingTableUC();
-            addUserControl(bookingTableUC);
+            BookingsUC bokkingsUC = new BookingsUC();
+            addUserControl(bokkingsUC);
         }
 
         private void RefreshMyForm()

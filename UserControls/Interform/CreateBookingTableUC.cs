@@ -117,5 +117,12 @@ namespace POSWindowsFormsAppWithFramework.UserControls
                 LoginUC loginUC = new LoginUC();
             }
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            BookingsUC bokkingsUC = new BookingsUC();
+            Controls.Add(bokkingsUC);
+            bokkingsUC.BringToFront();
+        }
     }
 }
