@@ -75,7 +75,7 @@ namespace POSWindowsFormsAppWithFramework.UserControls
             {
                 httpClient.BaseAddress = new Uri(ConfigurationManager.AppSettings["POSApis"]);
 
-                var response = await httpClient.GetAsync("/Booking/get-anniversary-type");
+                var response = await httpClient.GetAsync("/Booking/get-anniversary-types");
 
                 var resultList = JsonConvert.DeserializeObject<List<string>>(await response.Content.ReadAsStringAsync());
                 if (response.IsSuccessStatusCode)

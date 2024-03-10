@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using POSWindowsFormsAppWithFramework.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,10 +29,9 @@ namespace POSWindowsFormsAppWithFramework.UserControls
                 httpClient.BaseAddress = new Uri(ConfigurationManager.AppSettings["POSApis"]);
 
                 var response = await httpClient.GetAsync("/Booking/get-all-bookings");
-                var data = response.Content.ReadAsStringAsync().Result.ToString();
+                var data = JsonConvert.DeserializeObject<List<BookingTableDetail>>(response.Content.ReadAsStringAsync().Result);
                 barCircleProgressBar.Visible = false;
-                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(response.Content.ReadAsStringAsync().Result.ToString(), data);
-                tblBookings.DataSource = sqlDataAdapter;
+                tblBookings.DataSource = data;
             }
         }
 

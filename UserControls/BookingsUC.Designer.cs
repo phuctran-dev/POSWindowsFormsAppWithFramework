@@ -31,17 +31,18 @@
             this.txtSearchBar = new Guna.UI2.WinForms.Guna2TextBox();
             this.gunabtnAddBookingTable = new Guna.UI2.WinForms.Guna2Button();
             this.tblBookings = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.barCircleProgressBar = new Guna.UI2.WinForms.Guna2CircleProgressBar();
             this.columnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnPeople = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.barCircleProgressBar = new Guna.UI2.WinForms.Guna2CircleProgressBar();
+            this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.tblBookings)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -98,40 +99,6 @@
             this.tblBookings.Name = "tblBookings";
             this.tblBookings.Size = new System.Drawing.Size(502, 475);
             this.tblBookings.TabIndex = 4;
-            // 
-            // columnName
-            // 
-            this.columnName.HeaderText = "Name";
-            this.columnName.Name = "columnName";
-            // 
-            // columnPeople
-            // 
-            this.columnPeople.HeaderText = "People";
-            this.columnPeople.Name = "columnPeople";
-            this.columnPeople.Width = 50;
-            // 
-            // columnDate
-            // 
-            this.columnDate.HeaderText = "Date";
-            this.columnDate.Name = "columnDate";
-            this.columnDate.Width = 80;
-            // 
-            // columnTime
-            // 
-            this.columnTime.HeaderText = "Time";
-            this.columnTime.Name = "columnTime";
-            this.columnTime.Width = 80;
-            // 
-            // columnPhone
-            // 
-            this.columnPhone.HeaderText = "Phone";
-            this.columnPhone.Name = "columnPhone";
-            // 
-            // columnStatus
-            // 
-            this.columnStatus.HeaderText = "Status";
-            this.columnStatus.Name = "columnStatus";
-            this.columnStatus.Width = 50;
             // 
             // panel1
             // 
@@ -218,11 +185,66 @@
             this.barCircleProgressBar.Value = 40;
             this.barCircleProgressBar.Visible = false;
             // 
+            // columnName
+            // 
+            this.columnName.DataPropertyName = "Name";
+            this.columnName.HeaderText = "Name";
+            this.columnName.Name = "columnName";
+            // 
+            // columnPeople
+            // 
+            this.columnPeople.DataPropertyName = "People";
+            this.columnPeople.HeaderText = "People";
+            this.columnPeople.Name = "columnPeople";
+            this.columnPeople.Width = 50;
+            // 
+            // columnDate
+            // 
+            this.columnDate.DataPropertyName = "Date";
+            this.columnDate.HeaderText = "Date";
+            this.columnDate.Name = "columnDate";
+            this.columnDate.Width = 80;
+            // 
+            // columnTime
+            // 
+            this.columnTime.DataPropertyName = "Time";
+            this.columnTime.HeaderText = "Time";
+            this.columnTime.Name = "columnTime";
+            this.columnTime.Width = 80;
+            // 
+            // columnPhone
+            // 
+            this.columnPhone.DataPropertyName = "Phone";
+            this.columnPhone.HeaderText = "Phone";
+            this.columnPhone.Name = "columnPhone";
+            // 
+            // columnStatus
+            // 
+            this.columnStatus.DataPropertyName = "Status";
+            this.columnStatus.HeaderText = "Status";
+            this.columnStatus.Name = "columnStatus";
+            this.columnStatus.Width = 50;
+            // 
+            // guna2Button4
+            // 
+            this.guna2Button4.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button4.ForeColor = System.Drawing.Color.White;
+            this.guna2Button4.Location = new System.Drawing.Point(459, 27);
+            this.guna2Button4.Name = "guna2Button4";
+            this.guna2Button4.Size = new System.Drawing.Size(46, 45);
+            this.guna2Button4.TabIndex = 24;
+            this.guna2Button4.Text = "guna2Button4";
+            // 
             // BookingsUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
+            this.Controls.Add(this.guna2Button4);
             this.Controls.Add(this.barCircleProgressBar);
             this.Controls.Add(this.tblBookings);
             this.Controls.Add(this.txtSearchBar);
@@ -251,5 +273,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn columnTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnPhone;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnStatus;
+        private Guna.UI2.WinForms.Guna2Button guna2Button4;
     }
 }
