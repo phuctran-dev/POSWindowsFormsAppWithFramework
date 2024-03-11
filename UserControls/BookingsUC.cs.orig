@@ -1,6 +1,9 @@
 ﻿using Newtonsoft.Json;
 using POSWindowsFormsAppWithFramework.Models;
+<<<<<<< HEAD
+=======
 using POSWindowsFormsAppWithFramework.Models.Dto;
+>>>>>>> b1178bed197a287c21c45b37cc3a67e6ec250063
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -32,11 +35,17 @@ namespace POSWindowsFormsAppWithFramework.UserControls
                 httpClient.BaseAddress = new Uri(ConfigurationManager.AppSettings["POSApis"]);
 
                 var response = await httpClient.GetAsync("/Booking/get-all-bookings");
+<<<<<<< HEAD
+                var data = JsonConvert.DeserializeObject<List<BookingTableDetail>>(response.Content.ReadAsStringAsync().Result);
+                barCircleProgressBar.Visible = false;
+                tblBookings.DataSource = data;
+=======
                 var data = response.Content.ReadAsStringAsync().Result.ToString();
 
                 barCircleProgressBar.Visible = false;
                 List<BookingTableDetail> bookingTableList = JsonConvert.DeserializeObject<List<BookingTableDetail>>(data);
                 tblBookings.DataSource = bookingTableList;
+>>>>>>> b1178bed197a287c21c45b37cc3a67e6ec250063
             }
         }
 

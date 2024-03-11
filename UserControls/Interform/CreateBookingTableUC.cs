@@ -34,7 +34,7 @@ namespace POSWindowsFormsAppWithFramework.UserControls
                     Name = txtName.Text,
                     People = int.Parse(txtPeople.Text),
                     PhoneNumber = txtPhoneNumber.Text,
-                    Date = txtDate.Value.ToString("dd/MM/yyyy"),
+                    Date = txtDate.Value.ToString("MM/dd/yyyy"),
                     Time = txtDate.Value.ToString("HH:mm"),
                     TypeAnniversary = cbbType.Text,
                     Note = txtNote.Text,
