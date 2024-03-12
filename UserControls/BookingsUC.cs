@@ -49,22 +49,32 @@ namespace POSWindowsFormsAppWithFramework.UserControls
 
         private async void btnDeleteBooking_Click(object sender, EventArgs e)
         {
-            DataGridViewColumn currentColumn = tblBookings.Columns[tblBookings.CurrentCell.ColumnIndex];
-            DataGridViewRow currentRow2= tblBookings.Rows[tblBookings.CurrentRow.Index];
-
             using (var httpClient = new HttpClient())
             {
                 DataGridViewRow currentRow = tblBookings.CurrentRow;
-                
+                int currentRowIndex = tblBookings.CurrentRow.Index;
+                int currentCellIndex = tblBookings.CurrentCell.ColumnIndex;
+
                 var bookingTableRequestDto = JsonConvert.SerializeObject(new BookingTableRequest
                 {
 
-                    Name = currentRow.Cells[3].Value.ToString(),
-                    PhoneNumber = currentRow.Cells[5].Value.ToString(),
-                    Date = currentRow.Cells[6].Value.ToString(),
-                    Time = currentRow.Cells[7].Value.ToString(),
+                    Name = tblBookings.Rows[currentRowIndex].Cells[4].Value?.ToString(),
+                    PhoneNumber = tblBookings.Rows[currentRowIndex].Cells[6].Value?.ToString(),
+                    Date = tblBookings.Rows[currentRowIndex].Cells[7].Value?.ToString(),
+                    Time = tblBookings.Rows[currentRowIndex].Cells[8].Value?.ToString(),
                     requestTime = DateTime.Now.ToString("G"),
                 });
+
+                var bookingTableRequestDtoNoJson = new BookingTableRequest
+                {
+
+                    Name = tblBookings.Rows[currentRowIndex].Cells[4].Value?.ToString(),
+                    PhoneNumber = tblBookings.Rows[currentRowIndex].Cells[6].Value?.ToString(),
+                    Date = tblBookings.Rows[currentRowIndex].Cells[7].Value?.ToString(),
+                    Time = tblBookings.Rows[currentRowIndex].Cells[8].Value?.ToString(),
+                    requestTime = DateTime.Now.ToString("G"),
+                };
+
                 var deleteRequest = new HttpRequestMessage
                 {
                     Content = new StringContent(JsonConvert.SerializeObject(bookingTableRequestDto),
@@ -79,8 +89,11 @@ namespace POSWindowsFormsAppWithFramework.UserControls
                 //    new StringContent(bookingTableRequestDto, Encoding.UTF8, "application/json"));
                 //var data = response.Content.ReadAsStringAsync().Result.ToString();
 
-                var response = httpClient.SendAsync(deleteRequest).Result;
-
+                //var response = await httpClient.SendAsync(deleteRequest);
+                var response2 = await httpClient.DeleteAsync(httpClient.BaseAddress
+                    + "Booking/delete-booking" + $"/{bookingTableRequestDtoNoJson.Name}" +
+                    $"-{bookingTableRequestDtoNoJson.PhoneNumber}" +
+                    $"-{bookingTableRequestDtoNoJson.Date.Replace("/", "")}");
                 barCircleProgressBar.Visible = false;
             }
         }
