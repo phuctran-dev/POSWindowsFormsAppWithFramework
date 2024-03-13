@@ -27,11 +27,12 @@ namespace POSWindowsFormsAppWithFramework.UserControls
 
         private async void BookingsUC_Load(object sender, EventArgs e)
         {
+            tblBookings.Refresh();
             using (var httpClient = new HttpClient())
             {
-                httpClient.BaseAddress = new Uri(ConfigurationManager.AppSettings["POSApis"]);
+                httpClient.BaseAddress = new Uri(ConfigurationManager.AppSettings["PSG.Booking.Api"]);
 
-                var response = await httpClient.GetAsync("/Booking/get-all-bookings");
+                var response = await httpClient.GetAsync("get-all-bookings");
                 var data = response.Content.ReadAsStringAsync().Result.ToString();
 
                 barCircleProgressBar.Visible = false;
@@ -49,52 +50,26 @@ namespace POSWindowsFormsAppWithFramework.UserControls
 
         private async void btnDeleteBooking_Click(object sender, EventArgs e)
         {
+            tblBookings.Refresh();
             using (var httpClient = new HttpClient())
             {
-                DataGridViewRow currentRow = tblBookings.CurrentRow;
-                int currentRowIndex = tblBookings.CurrentRow.Index;
-                int currentCellIndex = tblBookings.CurrentCell.ColumnIndex;
+                barCircleProgressBar.Visible = true;
+                httpClient.BaseAddress = new Uri(ConfigurationManager.AppSettings["PSG.Booking.Api"]);
 
-                var bookingTableRequestDto = JsonConvert.SerializeObject(new BookingTableRequest
-                {
-
-                    Name = tblBookings.Rows[currentRowIndex].Cells[4].Value?.ToString(),
-                    PhoneNumber = tblBookings.Rows[currentRowIndex].Cells[6].Value?.ToString(),
-                    Date = tblBookings.Rows[currentRowIndex].Cells[7].Value?.ToString(),
-                    Time = tblBookings.Rows[currentRowIndex].Cells[8].Value?.ToString(),
-                    requestTime = DateTime.Now.ToString("G"),
-                });
-
-                var bookingTableRequestDtoNoJson = new BookingTableRequest
-                {
-
-                    Name = tblBookings.Rows[currentRowIndex].Cells[4].Value?.ToString(),
-                    PhoneNumber = tblBookings.Rows[currentRowIndex].Cells[6].Value?.ToString(),
-                    Date = tblBookings.Rows[currentRowIndex].Cells[7].Value?.ToString(),
-                    Time = tblBookings.Rows[currentRowIndex].Cells[8].Value?.ToString(),
-                    requestTime = DateTime.Now.ToString("G"),
-                };
+                string bookingIdDto = tblBookings.Rows[tblBookings.CurrentRow.Index].Cells[3].Value.ToString();
 
                 var deleteRequest = new HttpRequestMessage
                 {
-                    Content = new StringContent(JsonConvert.SerializeObject(bookingTableRequestDto),
+                    Content = new StringContent(JsonConvert.SerializeObject(bookingIdDto),
                     Encoding.UTF8, "application/json"),
                     Method = HttpMethod.Delete,
-                    RequestUri = new Uri(ConfigurationManager.AppSettings["POSApis"] + "/Booking/delete-booking")
+                    RequestUri = new Uri(ConfigurationManager.AppSettings["PSG.Booking.Api"] + $"delete-booking/{bookingIdDto}")
                 };
-
-                httpClient.BaseAddress = new Uri(ConfigurationManager.AppSettings["POSApis"]);
-
-                //var response = await httpClient.DeleteAsync("/Booking/delete-booking",
-                //    new StringContent(bookingTableRequestDto, Encoding.UTF8, "application/json"));
-                //var data = response.Content.ReadAsStringAsync().Result.ToString();
-
-                //var response = await httpClient.SendAsync(deleteRequest);
-                var response2 = await httpClient.DeleteAsync(httpClient.BaseAddress
-                    + "Booking/delete-booking" + $"/{bookingTableRequestDtoNoJson.Name}" +
-                    $"-{bookingTableRequestDtoNoJson.PhoneNumber}" +
-                    $"-{bookingTableRequestDtoNoJson.Date.Replace("/", "")}");
+                var response = await httpClient.SendAsync(deleteRequest);
                 barCircleProgressBar.Visible = false;
+                tblBookings.Refresh();
+                BookingsUC bookingsUC = new BookingsUC();
+                bookingsUC.Refresh();
             }
         }
     }

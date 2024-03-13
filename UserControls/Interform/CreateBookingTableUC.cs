@@ -27,8 +27,7 @@ namespace POSWindowsFormsAppWithFramework.UserControls
         {
             using (var httpClient = new HttpClient())
             {
-                httpClient.BaseAddress = new Uri(ConfigurationManager.AppSettings["POSApis"]);
-
+                httpClient.BaseAddress = new Uri(ConfigurationManager.AppSettings["PSG.Booking.Api"]);
                 var bookingTableRequestDto = JsonConvert.SerializeObject(new BookingTableRequest
                 {
                     Name = txtName.Text,
@@ -41,7 +40,7 @@ namespace POSWindowsFormsAppWithFramework.UserControls
                     requestTime = DateTime.Now.ToString("G"),
                 });
 
-                var response = await httpClient.PostAsync("/Booking/create-booking",
+                var response = await httpClient.PostAsync("create-booking",
                                 new StringContent(bookingTableRequestDto, Encoding.UTF8, "application/json"));
                 lblResult.Visible = true;
                 lblResult.BringToFront();
@@ -73,9 +72,9 @@ namespace POSWindowsFormsAppWithFramework.UserControls
             cbbTime.DataSource = timeRange;
             using (var httpClient = new HttpClient())
             {
-                httpClient.BaseAddress = new Uri(ConfigurationManager.AppSettings["POSApis"]);
+                httpClient.BaseAddress = new Uri(ConfigurationManager.AppSettings["PSG.Booking.Api"]);
 
-                var response = await httpClient.GetAsync("/Booking/get-anniversary-types");
+                var response = await httpClient.GetAsync("/get-anniversary-types");
 
                 var resultList = JsonConvert.DeserializeObject<List<string>>(await response.Content.ReadAsStringAsync());
                 if (response.IsSuccessStatusCode)

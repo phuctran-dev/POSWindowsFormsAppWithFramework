@@ -63,7 +63,7 @@ namespace POSWindowsFormsAppWithFramework.UserControls
             
             using (var httpClient = new HttpClient())
             {
-                httpClient.BaseAddress = new Uri(ConfigurationManager.AppSettings["POSApis"]);
+                httpClient.BaseAddress = new Uri(ConfigurationManager.AppSettings["PSG.Booking.Api"]);
 
                 var authenticationRequestDto = JsonConvert.SerializeObject(new AuthenticationRequest
                 {
@@ -72,7 +72,7 @@ namespace POSWindowsFormsAppWithFramework.UserControls
                     requestTime = DateTime.Now.ToString("G"),
                 });
 
-                var response = await httpClient.PostAsync("/Account/login", 
+                var response = await httpClient.PostAsync("/login", 
                                 new StringContent(authenticationRequestDto, Encoding.UTF8, "application/json"));
                 barCircleProgressBar.Visible = false;
                 lblResult.Visible = true;   
@@ -90,7 +90,7 @@ namespace POSWindowsFormsAppWithFramework.UserControls
             using (var httpClient = new HttpClient())
             {
 
-                httpClient.BaseAddress = new Uri(ConfigurationManager.AppSettings["POSApis"]);
+                httpClient.BaseAddress = new Uri(ConfigurationManager.AppSettings["PSG.Booking.Api"]);
 
                 var loginRequestDto = JsonConvert.SerializeObject(new AuthenticationRequest
                 {
@@ -99,7 +99,7 @@ namespace POSWindowsFormsAppWithFramework.UserControls
                     requestTime = DateTime.Now.ToString("G"),
                 });
 
-                var response = await httpClient.PostAsync($"/Account/register",
+                var response = await httpClient.PostAsync($"/register",
                                 new StringContent(loginRequestDto, Encoding.UTF8, "application/json"));
                 barCircleProgressBar.Visible = false;
                 lblResult.Visible = true;
@@ -120,7 +120,7 @@ namespace POSWindowsFormsAppWithFramework.UserControls
             using (var httpClient = new HttpClient())
             {
 
-                httpClient.BaseAddress = new Uri(ConfigurationManager.AppSettings["POSApis"]);
+                httpClient.BaseAddress = new Uri(ConfigurationManager.AppSettings["PSG.Booking.Api"]);
 
                 var forgotRequestDto = JsonConvert.SerializeObject(new AuthenticationRequest
                 {
@@ -128,7 +128,7 @@ namespace POSWindowsFormsAppWithFramework.UserControls
                     requestTime = DateTime.Now.ToString("G"),
                 });
 
-                var response = await httpClient.PostAsync($"/Account/forgot",
+                var response = await httpClient.PostAsync($"/forgot",
                                 new StringContent(forgotRequestDto, Encoding.UTF8, "application/json"));
                 barCircleProgressBar.Visible = false;
                 lblResult.Visible = true;

@@ -31,6 +31,12 @@
             this.txtSearchBar = new Guna.UI2.WinForms.Guna2TextBox();
             this.gunabtnAddBookingTable = new Guna.UI2.WinForms.Guna2Button();
             this.tblBookings = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnDeleteBooking = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.barCircleProgressBar = new Guna.UI2.WinForms.Guna2CircleProgressBar();
+            this.columnBookingId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnPeople = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,11 +44,6 @@
             this.columnTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnAnniversaryType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
-            this.btnDeleteBooking = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.barCircleProgressBar = new Guna.UI2.WinForms.Guna2CircleProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.tblBookings)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -63,7 +64,7 @@
             this.txtSearchBar.PasswordChar = '\0';
             this.txtSearchBar.PlaceholderText = "";
             this.txtSearchBar.SelectedText = "";
-            this.txtSearchBar.Size = new System.Drawing.Size(602, 27);
+            this.txtSearchBar.Size = new System.Drawing.Size(656, 27);
             this.txtSearchBar.TabIndex = 1;
             // 
             // gunabtnAddBookingTable
@@ -89,6 +90,7 @@
             // 
             this.tblBookings.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tblBookings.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.columnBookingId,
             this.columnName,
             this.columnPeople,
             this.columnPhone,
@@ -98,54 +100,8 @@
             this.columnStatus});
             this.tblBookings.Location = new System.Drawing.Point(7, 120);
             this.tblBookings.Name = "tblBookings";
-            this.tblBookings.Size = new System.Drawing.Size(602, 475);
+            this.tblBookings.Size = new System.Drawing.Size(652, 475);
             this.tblBookings.TabIndex = 4;
-            // 
-            // columnName
-            // 
-            this.columnName.DataPropertyName = "Name";
-            this.columnName.HeaderText = "Name";
-            this.columnName.Name = "columnName";
-            // 
-            // columnPeople
-            // 
-            this.columnPeople.DataPropertyName = "People";
-            this.columnPeople.HeaderText = "People";
-            this.columnPeople.Name = "columnPeople";
-            this.columnPeople.Width = 50;
-            // 
-            // columnPhone
-            // 
-            this.columnPhone.DataPropertyName = "Phone";
-            this.columnPhone.HeaderText = "Phone";
-            this.columnPhone.Name = "columnPhone";
-            // 
-            // columnDate
-            // 
-            this.columnDate.DataPropertyName = "Date";
-            this.columnDate.HeaderText = "Date";
-            this.columnDate.Name = "columnDate";
-            this.columnDate.Width = 80;
-            // 
-            // columnTime
-            // 
-            this.columnTime.DataPropertyName = "Time";
-            this.columnTime.HeaderText = "Time";
-            this.columnTime.Name = "columnTime";
-            this.columnTime.Width = 80;
-            // 
-            // columnAnniversaryType
-            // 
-            this.columnAnniversaryType.DataPropertyName = "AnniversaryType";
-            this.columnAnniversaryType.HeaderText = "Anniversary Type";
-            this.columnAnniversaryType.Name = "columnAnniversaryType";
-            // 
-            // columnStatus
-            // 
-            this.columnStatus.DataPropertyName = "Status";
-            this.columnStatus.HeaderText = "Status";
-            this.columnStatus.Name = "columnStatus";
-            this.columnStatus.Width = 50;
             // 
             // panel1
             // 
@@ -154,7 +110,7 @@
             this.panel1.Controls.Add(this.btnDeleteBooking);
             this.panel1.Controls.Add(this.guna2Button1);
             this.panel1.Controls.Add(this.gunabtnAddBookingTable);
-            this.panel1.Location = new System.Drawing.Point(618, 121);
+            this.panel1.Location = new System.Drawing.Point(728, 120);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(197, 235);
             this.panel1.TabIndex = 5;
@@ -233,6 +189,59 @@
             this.barCircleProgressBar.Value = 40;
             this.barCircleProgressBar.Visible = false;
             // 
+            // columnBookingId
+            // 
+            this.columnBookingId.DataPropertyName = "BookingId";
+            this.columnBookingId.HeaderText = "Id";
+            this.columnBookingId.Name = "columnBookingId";
+            this.columnBookingId.Width = 50;
+            // 
+            // columnName
+            // 
+            this.columnName.DataPropertyName = "Name";
+            this.columnName.HeaderText = "Name";
+            this.columnName.Name = "columnName";
+            // 
+            // columnPeople
+            // 
+            this.columnPeople.DataPropertyName = "People";
+            this.columnPeople.HeaderText = "People";
+            this.columnPeople.Name = "columnPeople";
+            this.columnPeople.Width = 50;
+            // 
+            // columnPhone
+            // 
+            this.columnPhone.DataPropertyName = "Phone";
+            this.columnPhone.HeaderText = "Phone";
+            this.columnPhone.Name = "columnPhone";
+            // 
+            // columnDate
+            // 
+            this.columnDate.DataPropertyName = "Date";
+            this.columnDate.HeaderText = "Date";
+            this.columnDate.Name = "columnDate";
+            this.columnDate.Width = 80;
+            // 
+            // columnTime
+            // 
+            this.columnTime.DataPropertyName = "Time";
+            this.columnTime.HeaderText = "Time";
+            this.columnTime.Name = "columnTime";
+            this.columnTime.Width = 80;
+            // 
+            // columnAnniversaryType
+            // 
+            this.columnAnniversaryType.DataPropertyName = "AnniversaryType";
+            this.columnAnniversaryType.HeaderText = "Anniversary Type";
+            this.columnAnniversaryType.Name = "columnAnniversaryType";
+            // 
+            // columnStatus
+            // 
+            this.columnStatus.DataPropertyName = "Status";
+            this.columnStatus.HeaderText = "Status";
+            this.columnStatus.Name = "columnStatus";
+            this.columnStatus.Width = 50;
+            // 
             // BookingsUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -243,7 +252,7 @@
             this.Controls.Add(this.txtSearchBar);
             this.Controls.Add(this.panel1);
             this.Name = "BookingsUC";
-            this.Size = new System.Drawing.Size(821, 598);
+            this.Size = new System.Drawing.Size(940, 598);
             this.Load += new System.EventHandler(this.BookingsUC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tblBookings)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -260,6 +269,7 @@
         private Guna.UI2.WinForms.Guna2Button btnDeleteBooking;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2CircleProgressBar barCircleProgressBar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnBookingId;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnName;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnPeople;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnPhone;

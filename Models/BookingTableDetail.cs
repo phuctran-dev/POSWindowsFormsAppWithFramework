@@ -10,7 +10,7 @@ namespace POSWindowsFormsAppWithFramework.Models
 {
     public class BookingTableDetail
     {
-        public string Id {  get; set; }
+        public string BookingId {  get; set; }
         public string Name { get; set; }
         public int People { get; set; }
         public string PhoneNumber { get; set; }
