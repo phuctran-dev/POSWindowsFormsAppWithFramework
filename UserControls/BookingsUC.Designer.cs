@@ -31,11 +31,6 @@
             this.txtSearchBar = new Guna.UI2.WinForms.Guna2TextBox();
             this.gunabtnAddBookingTable = new Guna.UI2.WinForms.Guna2Button();
             this.tblBookings = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
-            this.btnDeleteBooking = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.barCircleProgressBar = new Guna.UI2.WinForms.Guna2CircleProgressBar();
             this.columnBookingId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnPeople = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,6 +39,12 @@
             this.columnTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnAnniversaryType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnDeleteBooking = new Guna.UI2.WinForms.Guna2Button();
+            this.btnEdit = new Guna.UI2.WinForms.Guna2Button();
+            this.barCircleProgressBar = new Guna.UI2.WinForms.Guna2CircleProgressBar();
+            this.btnRefresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tblBookings)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -102,92 +103,7 @@
             this.tblBookings.Name = "tblBookings";
             this.tblBookings.Size = new System.Drawing.Size(652, 475);
             this.tblBookings.TabIndex = 4;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(68)))), ((int)(((byte)(90)))));
-            this.panel1.Controls.Add(this.guna2Button3);
-            this.panel1.Controls.Add(this.btnDeleteBooking);
-            this.panel1.Controls.Add(this.guna2Button1);
-            this.panel1.Controls.Add(this.gunabtnAddBookingTable);
-            this.panel1.Location = new System.Drawing.Point(728, 120);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(197, 235);
-            this.panel1.TabIndex = 5;
-            // 
-            // guna2Button3
-            // 
-            this.guna2Button3.BorderRadius = 15;
-            this.guna2Button3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Button3.FillColor = System.Drawing.Color.MidnightBlue;
-            this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
-            this.guna2Button3.ForeColor = System.Drawing.Color.White;
-            this.guna2Button3.Location = new System.Drawing.Point(0, 135);
-            this.guna2Button3.Margin = new System.Windows.Forms.Padding(6);
-            this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.Size = new System.Drawing.Size(197, 45);
-            this.guna2Button3.TabIndex = 6;
-            this.guna2Button3.Text = "DUPLICATE";
-            // 
-            // btnDeleteBooking
-            // 
-            this.btnDeleteBooking.BorderRadius = 15;
-            this.btnDeleteBooking.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnDeleteBooking.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnDeleteBooking.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnDeleteBooking.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDeleteBooking.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDeleteBooking.FillColor = System.Drawing.Color.MidnightBlue;
-            this.btnDeleteBooking.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteBooking.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteBooking.Location = new System.Drawing.Point(0, 90);
-            this.btnDeleteBooking.Margin = new System.Windows.Forms.Padding(6);
-            this.btnDeleteBooking.Name = "btnDeleteBooking";
-            this.btnDeleteBooking.Size = new System.Drawing.Size(197, 45);
-            this.btnDeleteBooking.TabIndex = 6;
-            this.btnDeleteBooking.Text = "DELETE";
-            this.btnDeleteBooking.Click += new System.EventHandler(this.btnDeleteBooking_Click);
-            // 
-            // guna2Button1
-            // 
-            this.guna2Button1.BorderRadius = 15;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Button1.FillColor = System.Drawing.Color.MidnightBlue;
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(0, 45);
-            this.guna2Button1.Margin = new System.Windows.Forms.Padding(6);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(197, 45);
-            this.guna2Button1.TabIndex = 3;
-            this.guna2Button1.Text = "EDIT";
-            // 
-            // barCircleProgressBar
-            // 
-            this.barCircleProgressBar.Animated = true;
-            this.barCircleProgressBar.AnimationSpeed = 0.5F;
-            this.barCircleProgressBar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
-            this.barCircleProgressBar.FillThickness = 15;
-            this.barCircleProgressBar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.barCircleProgressBar.ForeColor = System.Drawing.Color.White;
-            this.barCircleProgressBar.Location = new System.Drawing.Point(351, 274);
-            this.barCircleProgressBar.Minimum = 0;
-            this.barCircleProgressBar.Name = "barCircleProgressBar";
-            this.barCircleProgressBar.ProgressThickness = 15;
-            this.barCircleProgressBar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.barCircleProgressBar.Size = new System.Drawing.Size(50, 50);
-            this.barCircleProgressBar.TabIndex = 23;
-            this.barCircleProgressBar.Text = "guna2CircleProgressBar1";
-            this.barCircleProgressBar.Value = 40;
-            this.barCircleProgressBar.Visible = false;
+            this.tblBookings.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblBookings_CellClick);
             // 
             // columnBookingId
             // 
@@ -242,11 +158,108 @@
             this.columnStatus.Name = "columnStatus";
             this.columnStatus.Width = 50;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(68)))), ((int)(((byte)(90)))));
+            this.panel1.Controls.Add(this.guna2Button3);
+            this.panel1.Controls.Add(this.btnDeleteBooking);
+            this.panel1.Controls.Add(this.btnEdit);
+            this.panel1.Controls.Add(this.gunabtnAddBookingTable);
+            this.panel1.Location = new System.Drawing.Point(728, 120);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(197, 235);
+            this.panel1.TabIndex = 5;
+            // 
+            // guna2Button3
+            // 
+            this.guna2Button3.BorderRadius = 15;
+            this.guna2Button3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Button3.FillColor = System.Drawing.Color.MidnightBlue;
+            this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
+            this.guna2Button3.ForeColor = System.Drawing.Color.White;
+            this.guna2Button3.Location = new System.Drawing.Point(0, 135);
+            this.guna2Button3.Margin = new System.Windows.Forms.Padding(6);
+            this.guna2Button3.Name = "guna2Button3";
+            this.guna2Button3.Size = new System.Drawing.Size(197, 45);
+            this.guna2Button3.TabIndex = 6;
+            this.guna2Button3.Text = "DUPLICATE";
+            // 
+            // btnDeleteBooking
+            // 
+            this.btnDeleteBooking.BorderRadius = 15;
+            this.btnDeleteBooking.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDeleteBooking.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDeleteBooking.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDeleteBooking.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDeleteBooking.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDeleteBooking.FillColor = System.Drawing.Color.MidnightBlue;
+            this.btnDeleteBooking.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteBooking.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteBooking.Location = new System.Drawing.Point(0, 90);
+            this.btnDeleteBooking.Margin = new System.Windows.Forms.Padding(6);
+            this.btnDeleteBooking.Name = "btnDeleteBooking";
+            this.btnDeleteBooking.Size = new System.Drawing.Size(197, 45);
+            this.btnDeleteBooking.TabIndex = 6;
+            this.btnDeleteBooking.Text = "DELETE";
+            this.btnDeleteBooking.Click += new System.EventHandler(this.btnDeleteBooking_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.BorderRadius = 15;
+            this.btnEdit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnEdit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnEdit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnEdit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnEdit.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEdit.FillColor = System.Drawing.Color.MidnightBlue;
+            this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.ForeColor = System.Drawing.Color.White;
+            this.btnEdit.Location = new System.Drawing.Point(0, 45);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(6);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(197, 45);
+            this.btnEdit.TabIndex = 3;
+            this.btnEdit.Text = "EDIT";
+            // 
+            // barCircleProgressBar
+            // 
+            this.barCircleProgressBar.Animated = true;
+            this.barCircleProgressBar.AnimationSpeed = 0.5F;
+            this.barCircleProgressBar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            this.barCircleProgressBar.FillThickness = 15;
+            this.barCircleProgressBar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barCircleProgressBar.ForeColor = System.Drawing.Color.White;
+            this.barCircleProgressBar.Location = new System.Drawing.Point(351, 274);
+            this.barCircleProgressBar.Minimum = 0;
+            this.barCircleProgressBar.Name = "barCircleProgressBar";
+            this.barCircleProgressBar.ProgressThickness = 15;
+            this.barCircleProgressBar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.barCircleProgressBar.Size = new System.Drawing.Size(50, 50);
+            this.barCircleProgressBar.TabIndex = 23;
+            this.barCircleProgressBar.Text = "guna2CircleProgressBar1";
+            this.barCircleProgressBar.Value = 40;
+            this.barCircleProgressBar.Visible = false;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(745, 412);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(75, 23);
+            this.btnRefresh.TabIndex = 24;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // BookingsUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.barCircleProgressBar);
             this.Controls.Add(this.tblBookings);
             this.Controls.Add(this.txtSearchBar);
@@ -267,7 +280,7 @@
         private System.Windows.Forms.Panel panel1;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
         private Guna.UI2.WinForms.Guna2Button btnDeleteBooking;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button btnEdit;
         private Guna.UI2.WinForms.Guna2CircleProgressBar barCircleProgressBar;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnBookingId;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnName;
@@ -277,5 +290,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn columnTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnAnniversaryType;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnStatus;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }

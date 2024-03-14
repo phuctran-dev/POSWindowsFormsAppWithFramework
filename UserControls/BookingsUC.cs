@@ -28,7 +28,12 @@ namespace POSWindowsFormsAppWithFramework.UserControls
 
         private async void BookingsUC_Load(object sender, EventArgs e)
         {
-            tblBookings.Refresh();
+            if ( tblBookings.SelectedRows.Count == 0 || tblBookings.SelectedCells.Count == 0)
+            {
+                btnDeleteBooking.Enabled = false;
+                btnEdit.Enabled = false;
+            }
+
             using (var httpClient = new HttpClient())
             {
                 httpClient.BaseAddress = new Uri(apiUrl);
@@ -57,21 +62,44 @@ namespace POSWindowsFormsAppWithFramework.UserControls
                 barCircleProgressBar.Visible = true;
                 httpClient.BaseAddress = new Uri(apiUrl);
 
-                string bookingIdDto = tblBookings.Rows[tblBookings.CurrentRow.Index].Cells[3].Value.ToString();
+                string bookingId = tblBookings.Rows[tblBookings.CurrentRow.Index].Cells[3].Value.ToString();
 
-                var deleteRequest = new HttpRequestMessage
+                var bookingIdDto = new HttpRequestMessage
                 {
-                    Content = new StringContent(JsonConvert.SerializeObject(bookingIdDto),
+                    Content = new StringContent(JsonConvert.SerializeObject(bookingId),
                     Encoding.UTF8, "application/json"),
                     Method = HttpMethod.Delete,
-                    RequestUri = new Uri(apiUrl + $"delete-booking/{bookingIdDto}")
+                    RequestUri = new Uri(apiUrl + $"delete-booking/{bookingId}")
                 };
-                var response = await httpClient.SendAsync(deleteRequest);
+                var response = await httpClient.SendAsync(bookingIdDto);
                 barCircleProgressBar.Visible = false;
                 tblBookings.Refresh();
                 BookingsUC bookingsUC = new BookingsUC();
                 bookingsUC.Refresh();
             }
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            BookingsUC bookingsUC = new BookingsUC();
+            bookingsUC.Refresh();
+        }
+
+        private void tblBookings_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (tblBookings.SelectedRows.Count != 0 || tblBookings.SelectedCells.Count != 0)
+            {
+                if(tblBookings.Rows[tblBookings.CurrentRow.Index].Cells[3].Value?.ToString() != null)
+                {
+                    btnDeleteBooking.Enabled = true;
+                    btnEdit.Enabled = true;
+                }
+            }
+        }
+
+        private async void btnEdit_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -217,9 +217,11 @@
             // 
             // panelMainContainer
             // 
+            this.panelMainContainer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelMainContainer.AutoSize = true;
             this.panelMainContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
-            this.panelMainContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMainContainer.Location = new System.Drawing.Point(105, 46);
             this.panelMainContainer.Name = "panelMainContainer";
             this.panelMainContainer.Size = new System.Drawing.Size(966, 504);
