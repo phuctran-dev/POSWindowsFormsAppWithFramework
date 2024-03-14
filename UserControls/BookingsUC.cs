@@ -20,6 +20,7 @@ namespace POSWindowsFormsAppWithFramework.UserControls
 {
     public partial class BookingsUC : UserControl
     {
+        private readonly string apiUrl = ConfigurationManager.AppSettings["PSG.Booking.Api"];
         public BookingsUC()
         {
             InitializeComponent();
@@ -30,7 +31,7 @@ namespace POSWindowsFormsAppWithFramework.UserControls
             tblBookings.Refresh();
             using (var httpClient = new HttpClient())
             {
-                httpClient.BaseAddress = new Uri(ConfigurationManager.AppSettings["PSG.Booking.Api"]);
+                httpClient.BaseAddress = new Uri(apiUrl);
 
                 var response = await httpClient.GetAsync("get-all-bookings");
                 var data = response.Content.ReadAsStringAsync().Result.ToString();
@@ -54,7 +55,7 @@ namespace POSWindowsFormsAppWithFramework.UserControls
             using (var httpClient = new HttpClient())
             {
                 barCircleProgressBar.Visible = true;
-                httpClient.BaseAddress = new Uri(ConfigurationManager.AppSettings["PSG.Booking.Api"]);
+                httpClient.BaseAddress = new Uri(apiUrl);
 
                 string bookingIdDto = tblBookings.Rows[tblBookings.CurrentRow.Index].Cells[3].Value.ToString();
 
@@ -63,7 +64,7 @@ namespace POSWindowsFormsAppWithFramework.UserControls
                     Content = new StringContent(JsonConvert.SerializeObject(bookingIdDto),
                     Encoding.UTF8, "application/json"),
                     Method = HttpMethod.Delete,
-                    RequestUri = new Uri(ConfigurationManager.AppSettings["PSG.Booking.Api"] + $"delete-booking/{bookingIdDto}")
+                    RequestUri = new Uri(apiUrl + $"delete-booking/{bookingIdDto}")
                 };
                 var response = await httpClient.SendAsync(deleteRequest);
                 barCircleProgressBar.Visible = false;
